@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | FAQ Accordion Card</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+   
+   :root{
+    --Very-dark-desaturated-blue: hsl(238, 29%, 16%);
+    --Soft-red: hsl(14, 88%, 65%);
+    --Very-dark-grayish-blue: hsl(237, 12%, 33%);
+    --Dark-grayish-blue: hsl(240, 6%, 50%);
+    --Light-grayish-blue: hsl(240, 5%, 91%);
+    --primary-font:'Kumbh Sans', sans-serif;
+   }
+
+   body{
+    background-image: -webkit-linear-gradient(-90deg, hsl(273, 75%, 66%) 0, hsl(240, 73%, 65%) 100%);
+background-image: -moz-linear-gradient(180deg, hsl(273, 75%, 66%) 0, hsl(240, 73%, 65%) 100%);
+background-image: linear-gradient(180deg, hsl(273, 75%, 66%) 0, hsl(240, 73%, 65%) 100%);
+background-position: 50% 50%;
+-webkit-background-origin: padding-box;
+background-origin: padding-box;
+-webkit-background-clip: border-box;
+background-clip: border-box;
+-webkit-background-size: auto auto;
+background-size: auto auto;
+height: 100vh;
+   }
+
+   /**************Desktop*****************/
+   .accordion-section{
+     margin-top: 100px;
+   }
+   .accordion-image .mobile{
+       display: none;
+   }
+
+   .faq-accordion{
+     width: 90%;
+     position: relative;
+     left: 10%;
+     border: 1px solid white;
+     border-radius: 40px;
+     padding: 80px 20px;
+   }
+
+   @media screen and (min-width:601px){
+    .left{
+     
+     position: relative;
+     
+   }
+   .icon-box{
+     position: absolute;
+     overflow: visible;
+     top: 39%;
+   }
+   .faq-accordion{
+    background: white;
+    overflow: hidden;
+   }
+   .left::before {
+    background: url(images/bg-pattern-desktop.svg);
+    z-index: 45;
+    position: absolute;
+    background-position: center;
+    height: 205%;
+    top: -216px;
+    content: "";
+    left: -313px;
+    width: 177%;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.accordion-image{
+  left: -100px;
+    position: relative;
+}
+   }
+
+
+.accordion .item .item-header {
+    border-bottom: none;
+    background: transparent;
+    padding: 0px;
+    margin: 2px;
+}
+.accordion .item .item-header h2 :not(.collapsed){
+  font-weight: 700;
+}
+.accordion .item .item-header h2 button {
+    color: var(--Very-dark-grayish-blue);
+    font-size: 20px;
+    padding: 15px;
+    display: block;
+    width: 100%;
+    text-align: left;
+    border-bottom: 1px solid #949090;
+    text-decoration: none;
+}
+
+   .accordion .item .item-header h2 img {
+    float: right;
+    width: 20px;
+    height: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    margin-top: 8px;
+}
+.accordion .item .item-header h2 button:hover{
+  color: var(--Soft-red);
+}
+button.btn.btn-link.collapsed img {
+    transform: rotate(0deg);
+}
+
+button.btn.btn-link img {
+    transform: rotate(180deg);
+    transition: 0.5s;
+}
+
+#collapseOne .t-p, #collapseTwo .t-p,#collapseThree .t-p, #collapseFour .t-p {
+  width: 92%;
+    padding-left: 17px;
+}
+
+  /************MOBILE VERSION*************/
+   @media screen and (max-width:600px){
+    .accordion-image .desktop{
+       display: none;
+   }
+   .faq-accordion{
+    background: white;
+   }
+   .accordion-image .mobile{
+       display: block;
+   }
+   .accordion-image .mobile::before {
+    background: url('images/bg-pattern-mobile.svg');
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+   .accordion-image{
+     position: relative;
+   }
+  /*  .left::before {
+    background: url(images/bg-pattern-desktop.svg);
+    z-index: 45;
+    position: absolute;
+    background-position: center;
+    height: 205%;
+    top: -216px;
+    content: "";
+    left: -313px;
+    width: 177%;
+    background-size: contain;
+    background-repeat: no-repeat;
+} */
+
+.accordion-image {
+background-repeat: no-repeat;
+top: -18%;
+position: relative;
+}
+.faq-accordion {
+padding: 80px 20px;
+padding: 20px 20px 77px 20px;
+}
+.accordion-content > h2:nth-child(1) {
+text-align: center;
+}
+.mobile {
+width: 350px;
+top: -62px;
+position: relative;
+}
+div.col-sm:nth-child(1) {
+margin-bottom: -80px;
+}
+   }
+  </style>
+</head>
+<body>
+  <!-- How many team members can I invite?
+  You can invite up to 2 additional users on the Free plan. There is no limit on 
+  team members for the Premium plan.
+
+  What is the maximum file upload size?
+  No more than 2GB. All files in your account must fit your allotted storage space.
+
+  How do I reset my password?
+  Click “Forgot password” from the login page or “Change password” from your profile page.
+  A reset link will be emailed to you.
+
+  Can I cancel my subscription?
+  Yes! Send us a message and we’ll process your request no questions asked.
+
+  Do you provide additional support?
+  Chat and email support is available 24/7. Phone lines are open during normal business hours. -->
+
+  <section class="accordion-section">
+    <div class="container">
+      <div class="row faq-accordion">
+        <div class="col-sm col-md-5 left">
+          <div class="accordion-image">
+            <img src="images/illustration-box-desktop.svg" alt="" class="desktop icon-box">
+            <img class="desktop" src="images/illustration-woman-online-desktop.svg" alt="accordion image">
+            <img class="mobile" src="images/illustration-woman-online-mobile.svg" alt="accordion image">
+          </div>
+        </div>
+        <div class="col-sm col-md-6">
+          <div class="accordion-content">
+            <h2>FAQ</h2>
+
+              <div class="accordion" id="faqaccordion">
+                <div class="item">
+                   <div class="item-header" id="headingOne">
+                      <h2 class="mb-0">
+                         <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                            data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                            How many team members can I invite?
+                         <img src="images/icon-arrow-down.svg" alt="">
+                         </button>
+                      </h2>
+                   </div>
+                   <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
+                      data-parent="#faqaccordion">
+                      <div class="t-p">
+                        You can invite up to 2 additional users on the Free plan. There is no limit on 
+                        team members for the Premium plan.
+                      </div>
+                   </div>
+                </div>
+                <div class="item">
+                   <div class="item-header" id="headingTwo">
+                      <h2 class="mb-0">
+                         <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                            data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            What is the maximum file upload size?
+                         <img src="images/icon-arrow-down.svg" alt="">
+                         </button>
+                      </h2>
+                   </div>
+                   <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                      data-parent="#faqaccordion">
+                      <div class="t-p">
+                        No more than 2GB. All files in your account must fit your allotted storage space.
+                      </div>
+                   </div>
+                </div>
+                <div class="item">
+                   <div class="item-header" id="headingThree">
+                      <h2 class="mb-0">
+                         <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                            data-target="#collapseThree" aria-expanded="false"
+                            aria-controls="collapseThree">
+                            How do I reset my password?
+                         <img src="images/icon-arrow-down.svg" alt="">
+                         </button>
+                      </h2>
+                   </div>
+                   <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                      data-parent="#faqaccordion">
+                      <div class="t-p">
+                        Click “Forgot password” from the login page or “Change password” from your profile page.
+                        A reset link will be emailed to you.
+                      </div>
+                   </div>
+                </div>
+                <div class="item">
+                   <div class="item-header" id="headingFour">
+                      <h2 class="mb-0">
+                         <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                            data-target="#collapseFour" aria-expanded="false"
+                            aria-controls="collapseFour">
+                            Can I cancel my subscription?
+                         <img src="images/icon-arrow-down.svg" alt="">
+                         </button>
+                      </h2>
+                   </div>
+                   <div id="collapseFour" class="collapse" aria-labelledby="headingFour"
+                      data-parent="#faqaccordion">
+                      <div class="t-p">
+                        Yes! Send us a message and we’ll process your request no questions asked.
+                      </div>
+                   </div>
+                </div>
+              </div>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+ <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+<script>
+  $('#myCollapsible').collapse({
+  toggle: false
+})
+</script>
+</body>
+</html>
